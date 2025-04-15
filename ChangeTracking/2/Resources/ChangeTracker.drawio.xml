@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36" version="26.1.1">
+  <diagram name="Page-1" id="nYjl0ymSAUPiFGs3QopK">
+    <mxGraphModel dx="1407" dy="539" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" value="ChangeTracker" style="shape=swimlane;childLayout=stackLayout;horizontal=1;startSize=30;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="520" y="20" width="240" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="3" value="+ Track(entity, state): void&#xa;+ DetectChanges(): void&#xa;+ GetTrackedEntities(): List&lt;EntityEntry&gt;&#xa;+ Clear(): void" style="text;html=1;align=left;verticalAlign=top;spacingLeft=10;spacingTop=10;" vertex="1" parent="2">
+          <mxGeometry y="30" width="240" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="4" value="EntityEntry" style="shape=swimlane;childLayout=stackLayout;horizontal=1;startSize=30;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="520" y="160" width="240" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="5" value="+ Entity: object&#xa;+ State: EntityState&#xa;+ Properties: List&lt;PropertyEntry&gt;&#xa;+ DetectChanges(): void&#xa;+ GetModifiedProperties(): List&lt;PropertyEntry&gt;" style="text;html=1;align=left;verticalAlign=top;spacingLeft=10;spacingTop=10;" vertex="1" parent="4">
+          <mxGeometry y="30" width="240" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="6" value="PropertyEntry" style="shape=swimlane;childLayout=stackLayout;horizontal=1;startSize=30;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="770" y="320" width="240" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="7" value="+ PropertyName: string&#xa;+ PropertyInfo: PropertyInfo&#xa;+ OriginalValue: object?&#xa;+ CurrentValue: object?&#xa;+ IsModified: bool&#xa;+ CheckIfModified(): void&#xa;+ AcceptChanges(): void" style="text;html=1;align=left;verticalAlign=top;spacingLeft=10;spacingTop=10;" vertex="1" parent="6">
+          <mxGeometry y="30" width="240" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="8" value="EntityState" style="shape=swimlane;childLayout=stackLayout;horizontal=1;startSize=30;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="270" y="320" width="240" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="9" value="+ Added&#xa;+ Modified&#xa;+ Deleted&#xa;+ Unchanged" style="text;html=1;align=left;verticalAlign=top;spacingLeft=10;spacingTop=10;" vertex="1" parent="8">
+          <mxGeometry y="30" width="240" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=open;" edge="1" source="2" target="4" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=open;" edge="1" source="4" target="6" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="890" y="240" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=open;" edge="1" source="4" target="8" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
